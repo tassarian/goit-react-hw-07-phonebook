@@ -3,7 +3,7 @@ import { Button, Input, InputTitle, StyledForm } from './Form.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/slice';
+import { addContactThunk } from 'redux/operations';
 
 export const Form = () => {
 	const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export const Form = () => {
 			setNumber('');
 		} else {
 			dispatch(
-				addContact({
+				addContactThunk({
 					id: nanoid(),
 					name,
 					number,
