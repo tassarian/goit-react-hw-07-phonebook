@@ -34,7 +34,6 @@ export const Form = () => {
 		} else {
 			dispatch(
 				addContactThunk({
-					id: nanoid(),
 					name,
 					number,
 				})
